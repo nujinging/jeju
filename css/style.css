@@ -148,7 +148,8 @@ body {overflow-x:hidden}
 
 
     /* 콘도 */
-.section03 {padding:0 0 80px;background:#fff}
+.section03 {padding:80px 0;background:#fff}
+.section03 .pin {padding-bottom:140px}
 .section03 .intro_tit .tit {color:#ff7c02}
 .section03 .intro_tit .txt:before {width:190px;background:url('./../img/ico_room.png') no-repeat}
 .section03 .list {display:flex;margin:40px auto;width:1440px;gap:0 20px}
@@ -158,8 +159,8 @@ body {overflow-x:hidden}
 .section03 .list li:nth-child(2):before {background:url('./../img/bg_room02.png') no-repeat}
 .section03 .list li:nth-child(3):before {background:url('./../img/bg_room03.png') no-repeat}
 .section03 .list li:nth-child(4):before {background:url('./../img/bg_room04.png') no-repeat}
-.section03 .room_box {position:relative;margin-bottom:80px;height:460px;overflow:hidden}
-.section03 .room_box video {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}
+.room_box {position:relative;margin-bottom:80px;height:460px;overflow:hidden}
+.room_box video {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}
 
 /* 레저와 자연 */
 .section04 {padding:80px 0;color:#fff;background: linear-gradient(0deg, rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)), url('./../img/bg_leisure.png') no-repeat}
