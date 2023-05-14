@@ -35,7 +35,7 @@
 /* RESET */
 html {color:#000;font-size:14px;background:#fff}
 html,
-body {width:100%;-webkit-text-size-adjust:none;font-family:'Pretendard-Light'}
+body {width:100%;-webkit-text-size-adjust:none;font-family:'Pretendard-Light';scroll-behavior:smooth}
 html,
 body {min-height:100%}
 body,

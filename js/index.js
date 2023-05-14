@@ -32,8 +32,6 @@ window.onload = function () {
     timeline3.to(".section03", 1, {  y: 0 }, 1)
             .to(".section04", 1, {  y:-900 }, 1)
 
-
-
     new ScrollMagic
         .Scene({
             triggerElement: ".section03",
@@ -43,6 +41,26 @@ window.onload = function () {
         .setPin(".section03")
         .setTween(timeline3)
         .addTo(controller);
+
+
+
+    // scene3
+    const timeline4 = new TimelineMax();
+
+    timeline4.to(".section05", 1, {  y:-900 ,delay: 0.6 }, 1)
+
+    new ScrollMagic
+        .Scene({
+            triggerElement: ".section05",
+            duration: "100%"
+        })
+        .setClassToggle(".section05", "active")
+        .setPin(".section05")
+        .setTween(timeline4)
+        .addTo(controller);
+
+
+
 
 
 };
