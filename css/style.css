@@ -33,9 +33,9 @@
 }
 
 /* RESET */
-html {color:#000;font-size:14px;background:#fff}
+html {color:#000;font-size:14px;background:#fff;scroll-behavior: smooth;}
 html,
-body {width:100%;-webkit-text-size-adjust:none;font-family:'Pretendard-Light'}
+body {width:100%;height:100%;-webkit-text-size-adjust:none;font-family:'Pretendard-Light'}
 html,
 body {min-height:100%}
 body,
@@ -116,6 +116,7 @@ button {border:0;background:transparent;cursor:pointer}
 .blind {overflow:hidden;clip:rect(1px,1px,1px,1px);position:absolute;width:1px;height:1px}
 body {overflow-x:hidden}
 
+.scrollWrap {width: 100%;height: 100%;}
 .inner {margin:0 auto;width:1080px}
 
 .tit {font-size:35px;line-height:30px;font-family: 'Pretendard-Medium', serif}
@@ -146,8 +147,7 @@ body {overflow-x:hidden}
 .section02 .swiper-button-prev {left:calc(50% - 550px);height:50px;background:url("data:image/svg+xml,%3Csvg width='28' height='51' viewBox='0 0 28 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.7744 4.27316C27.0069 4.04072 27.1912 3.76477 27.317 3.46107C27.4428 3.15738 27.5076 2.83188 27.5076 2.50316C27.5076 2.17444 27.4428 1.84894 27.317 1.54524C27.1912 1.24154 27.0069 0.965597 26.7744 0.733157C26.542 0.500718 26.266 0.316337 25.9623 0.190542C25.6586 0.0647463 25.3331 -2.44915e-09 25.0044 0C24.6757 2.44915e-09 24.3502 0.0647463 24.0465 0.190542C23.7428 0.316337 23.4668 0.500718 23.2344 0.733157L0.734413 23.2332C0.501596 23.4654 0.316883 23.7413 0.190851 24.045C0.0648193 24.3487 -5.34058e-05 24.6743 -5.34058e-05 25.0032C-5.34058e-05 25.332 0.0648193 25.6576 0.190851 25.9613C0.316883 26.2651 0.501596 26.5409 0.734413 26.7732L23.2344 49.2732C23.4668 49.5056 23.7428 49.69 24.0465 49.8158C24.3502 49.9416 24.6757 50.0063 25.0044 50.0063C25.3331 50.0063 25.6586 49.9416 25.9623 49.8158C26.266 49.69 26.542 49.5056 26.7744 49.2732C27.0069 49.0407 27.1912 48.7648 27.317 48.4611C27.4428 48.1574 27.5076 47.8319 27.5076 47.5032C27.5076 47.1744 27.4428 46.8489 27.317 46.5452C27.1912 46.2415 27.0069 45.9656 26.7744 45.7332L6.03941 25.0032L26.7744 4.27316Z' fill='%23AAAAAA'/%3E%3C/svg%3E%0A")}
 .section02 .swiper-button-next {right:calc(50% - 550px);height:50px;background:url("data:image/svg+xml,%3Csvg width='28' height='51' viewBox='0 0 28 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.733157 4.27316C0.500718 4.04072 0.316337 3.76477 0.190542 3.46107C0.0647463 3.15738 2.44915e-09 2.83188 0 2.50316C-2.44915e-09 2.17444 0.0647463 1.84894 0.190542 1.54524C0.316337 1.24154 0.500718 0.965597 0.733157 0.733157C0.965597 0.500718 1.24154 0.316337 1.54524 0.190542C1.84894 0.0647463 2.17444 -2.44915e-09 2.50316 0C2.83188 2.44915e-09 3.15738 0.0647463 3.46108 0.190542C3.76477 0.316337 4.04072 0.500718 4.27316 0.733157L26.7732 23.2332C27.006 23.4654 27.1907 23.7413 27.3167 24.045C27.4427 24.3487 27.5076 24.6743 27.5076 25.0032C27.5076 25.332 27.4427 25.6576 27.3167 25.9613C27.1907 26.2651 27.006 26.5409 26.7732 26.7732L4.27316 49.2732C4.04072 49.5056 3.76477 49.69 3.46108 49.8158C3.15738 49.9416 2.83188 50.0063 2.50316 50.0063C2.17444 50.0063 1.84894 49.9416 1.54524 49.8158C1.24154 49.69 0.965597 49.5056 0.733157 49.2732C0.500718 49.0407 0.316337 48.7648 0.190542 48.4611C0.0647463 48.1574 0 47.8319 0 47.5032C0 47.1744 0.0647463 46.8489 0.190542 46.5452C0.316337 46.2415 0.500718 45.9656 0.733157 45.7332L21.4682 25.0032L0.733157 4.27316Z' fill='%23AAAAAA'/%3E%3C/svg%3E%0A")}
 
-
-    /* 콘도 */
+/* 콘도 */
 .section03 {padding:80px 0;background:#fff}
 .section03 .pin {padding-bottom:140px}
 .section03 .intro_tit .tit {color:#ff7c02}
@@ -159,7 +159,7 @@ body {overflow-x:hidden}
 .section03 .list li:nth-child(2):before {background:url('./../img/bg_room02.png') no-repeat}
 .section03 .list li:nth-child(3):before {background:url('./../img/bg_room03.png') no-repeat}
 .section03 .list li:nth-child(4):before {background:url('./../img/bg_room04.png') no-repeat}
-.room_box {position:relative;margin-bottom:80px;height:460px;overflow:hidden}
+.room_box {position:relative;height:460px;overflow:hidden}
 .room_box video {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}
 
 /* 레저와 자연 */
@@ -171,7 +171,7 @@ body {overflow-x:hidden}
 .section04 .leisure_box video {width:100%}
 
 /* 미식 */
-.section05 {padding:88px 0 82px}
+.section05 {padding:88px 0 82px;background:#fff;}
 .section05 .intro_tit .tit {color:#ff7d02}
 .section05 .intro_tit .txt:before {background:url('./../img/ico_rice.png') no-repeat}
 .section05 .rice_box {position:relative;margin:40px 0;height:440px;overflow:hidden}
@@ -190,5 +190,5 @@ body {overflow-x:hidden}
 .footer p {padding:10px 0;color:#fff;font-size:15px;line-height:30px;text-align:center;background:#222}
 
 /* 올리기 버튼 */
-.btn_top {position:fixed;right:230px;bottom:90px;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg width='22' height='13' viewBox='0 0 22 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.4281 11.4264L11 1.99832L1.57191 11.4264' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center no-repeat;box-shadow:0 0 5px rgba(0, 0, 0, 0.25)}
+.top_btn {position:fixed;right:230px;bottom:90px;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg width='22' height='13' viewBox='0 0 22 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.4281 11.4264L11 1.99832L1.57191 11.4264' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center no-repeat;box-shadow:0 0 5px rgba(0, 0, 0, 0.25)}
 

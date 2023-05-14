@@ -1,50 +1,130 @@
+$(document).ready(function () {
+  //Swiper
+  new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 2,
+    centeredSlides: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
-window.onload = function () {
+  //Scroll Object Init
+  var scrollObj = window.Scrollbar.init(document.querySelector('.scrollWrap'), { thumbMinSize: 10, speed: 2 });
+  gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+  ScrollTrigger.scrollerProxy('.scrollWrap', {
+    scrollTop: function (value) {
+      if (arguments.length) {
+        scrollObj.scrollTop = value;
+      }
+      return scrollObj.scrollTop;
+    },
+  });
 
-    TweenLite.defaultEase = Linear.easeNone;
+  scrollObj.addListener(function (e) {
+    ScrollTrigger.update();
+  });
+  ScrollTrigger.defaults({ scroller: document.querySelector('.scrollWrap') });
 
-    // ScollMagic 컨트롤러 생성
-    const controller = new ScrollMagic.Controller({
-        globalSceneOptions: {
-            triggerHook: 'onLeave',
-        }
-    });
+  gsap.timeline({
+    defaults: {
+      ease: 'none',
+    },
+    scrollTrigger: {
+      start: function start() {
+        return 0;
+      },
+      end: function end() {
+        return $('#content').height();
+      },
+      invalidateOnRefresh: true,
+      scrub: 1,
+    },
+  });
 
-    // animation object 생성
-    const timeline1 = new TimelineMax();
+  //section1 binding - intro
+  gsap.to('#intro', {
+    scrollTrigger: {
+      trigger: '#intro',
+      start: 'top top',
+      scrub: true,
+    },
+    delay: 0.5,
+    opacity: '0',
+    ease: 'none',
+  });
 
-    timeline1.to(".section01 .tit", 1, { opacity: 0, x: 150})
+  gsap.to('#intro .intro_text', {
+    scrollTrigger: {
+      trigger: '#intro',
+      start: 'top top',
+      scrub: true,
+    },
+    delay: 0.5,
+    yPercent: +300,
+    ease: 'none',
+  });
 
-    // scene1 (Scene object 생성)
-    new ScrollMagic
-        .Scene({
-            triggerElement: ".sect01", // 스크롤 애니메이션 시작 시점
-            duration: '100%' // 애니메이션 재생 시간, 100%일 경우 화면 높이에따라 유동적으로 end 위치 정해짐
-        })
-        .setTween(timeline1) // 애니메이션 오브젝트 추가
-        .addTo(controller); // 스크롤매직 컨트롤러 추가
+  //section2 binding
+  gsap.to('.room_box', {
+    scrollTrigger: {
+      trigger: $('.room_box'),
+      start: 'top 0%',
+      end: '+=3000',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
+  //section3 binding
+  gsap.to('.section03', {
+    scrollTrigger: {
+      trigger: $('.section03'),
+      start: 'top -30%',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
+  //section4 binding
+  gsap.to('.section04', {
+    scrollTrigger: {
+      trigger: $('.section04'),
+      start: 'top -36%',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
-    // scene3
-    const timeline3 = new TimelineMax();
+  //section5 binding
+  gsap.to('.section05', {
+    scrollTrigger: {
+      trigger: $('.section05'),
+      start: 'top -36%',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
-    timeline3.to(".section03", 1, {  y: 0 }, 1)
-            .to(".section04", 1, {  y:-900 }, 1)
+  //section6 binding
+  gsap.to('.section06', {
+    scrollTrigger: {
+      trigger: $('.section06'),
+      start: 'top 0%',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
+  //top button
+  $('.top_btn').on('click', function (e) {
+    e.preventDefault();
 
-
-    new ScrollMagic
-        .Scene({
-            triggerElement: ".section03",
-            duration: "100%"
-        })
-        .setClassToggle(".section03", "active")
-        .setPin(".section03")
-        .setTween(timeline3)
-        .addTo(controller);
-
-
-};
-
-
+    scrollObj.scrollTo(0, 0, 1000);
+  });
+});
