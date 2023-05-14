@@ -12,7 +12,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css"/>
 
 </head>
 <body>
@@ -23,6 +23,10 @@
     </div>
     <!-- 메인 -->
     <section class="section01" id="parallax1">
+        <video autoplay muted loop id="myVideo">
+            <source src="./img/bg_intro.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
         <div class="inner">
             <h1 class="tit">숙박을 뛰어넘는 경험... 제주의 신</h1>
         </div>
@@ -44,7 +48,27 @@
                 바쁜 일상에 치일 때 한 번쯤 떠올리게 되는 곳, 제주도다. 낮에는 제주의 청정 자연을 즐기고, 밤에는 테마파크 불꽃놀이와 라이트쇼를 보며 맥주잔을 기울일 수 있는 곳이 있다. 개장
                 5주년을 맞은 국내 최대 규모의 복합리조트, '제주신화월드' 이야기다. 약 2000여개의 객실, 다양한 부대시설과 미식(美食)으로 제주의 새로운 명소가 됐다.
             </p>
-            <!-- 슬라이드 자리 -->
+        </div>
+
+
+        <div class="slide_box swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide item">
+                    <img src="./img/bg_slide01.png" alt="">
+                </div>
+                <div class="swiper-slide item">
+                    <img src="./img/bg_slide01.png" alt="">
+                </div>
+                <div class="swiper-slide item">
+                    <img src="./img/bg_slide01.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+
+        <div class="inner">
             <p class="txt">
                 15년 차 직장인 김00씨는 고된 업무, 잦은 야근에 지쳤다. 이렇게 흘러가는 대로 살 수는 없다고 생각한 그는 과감히 회사에 이틀 휴가를 내고 가족과 함께 제주도로 떠났다. 하지만
                 "제주야 반갑다"를 외치기도 전에 "날씨가 왜 이러지?"란 말이 나올 만큼 비바람이 몰아친다. 첨단 장비를 동원한 일기예보도 빗나가는 경우가 허다할 만큼 '5분 간격'으로 변한다는
@@ -66,8 +90,10 @@
     <!-- 360도 동영상 -->
     <section class="section03" id="parallax3">
         <!-- 동영상 자리 -->
-        <div class="">
-            동영상 자리
+        <div class="room_box">
+            <video muted loop id="myVideo2">
+                <source src="./img/bg_intro.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="inner">
             <div class="intro_tit">
@@ -114,7 +140,9 @@
                 </p>
             </div>
             <div class="leisure_box">
-
+                <video muted loop id="myVideo3">
+                    <source src="./img/bg_intro.mp4" type="video/mp4">
+                </video>
             </div>
 
             <p class="txt">
@@ -141,7 +169,9 @@
             </div>
             <!-- 동영상 자리 -->
             <div class="rice_box">
-
+                <video muted loop id="myVideo4">
+                    <source src="./img/bg_intro.mp4" type="video/mp4">
+                </video>
             </div>
             <p class="txt">
                 이곳은 40여개의 레스토랑이 있어 입맛과 분위기에 따라 음식과 주류를 즐길 수 있다. 셰프가 직접 철판에 흑돼지를 구워 오마카세 스타일로 내는 '제주선 더 블랙', 제주의 멋진 풍경을
@@ -200,26 +230,20 @@
 </div>
 </body>
 <script src="./js/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.js"></script>
 <script>
-    // init controller
-    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-
-    // build scenes
-    new ScrollMagic.Scene({triggerElement: "#parallax1"})
-        // .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
-        .addIndicators()
-
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax2"})
-        // .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
-        .addIndicators()
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax3"})
-        // .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
-        .addIndicators()
-        .addTo(controller);
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,                         //loop
+        slidesPerView: 2,                   //number of slides to show
+        centeredSlides : true,              //put acctive slide center
+        spaceBetween: 20,
+        pagination: {                       //pagination（dots）
+            el: '.swiper-pagination',
+        },
+        navigation: {                       //navigation（arrows）
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    })
 </script>
 </html>
