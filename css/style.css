@@ -11,6 +11,11 @@
     font-weight: 600;
 }
 @font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+@font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
@@ -111,19 +116,54 @@ button {border:0;background:transparent;cursor:pointer}
 .blind {overflow:hidden;clip:rect(1px,1px,1px,1px);position:absolute;width:1px;height:1px}
 body {overflow-x:hidden}
 
-section .inner {margin:0 auto;width:1080px}
+.inner {margin:0 auto;width:1080px}
 
+.tit {font-size:35px;line-height:30px;font-family: 'Pretendard-Medium', serif}
+.txt {font-size:20px;line-height:30px}
+.txt+.txt {margin-top:40px}
 
+.intro_tit .tit {font-size:35px;line-height:30px}
+.intro_tit .txt {display:flex;align-items:center;margin-top:40px}
+.intro_tit .txt:before {display:block;align-items:center;flex-shrink:0;margin-right:40px;width:180px;height:165px;background:#000;content:''}
+
+/* 헤더 */
+.header {position:fixed;top:0;display:flex;align-items:center;justify-content:center;width:100%;height:50px;background:#E16F00;z-index:1}
+
+/* 랜드마크 */
 .section01 {position:relative;height:100vh;color:#fff;background:#000}
 .section01 .inner {position:absolute;left:50%;bottom:130px;line-height:30px;transform:translateX(-50%)}
 .section01 .tit {color:#fff;font-size:45px;font-family: 'Pretendard-Bold', serif}
-.section01 .txt {color:#222;font-size:20px}
 
+/* 슬라이드 */
+.section02 {padding:80px 0;background:#fff}
 .section02 .desc {margin-bottom:40px;padding:20px 0;color:#666;font-size:17px;line-height:30px;text-align:center;border:1px solid #ddd}
-.section02 .txt {color:#222;font-size:20px;line-height:30px}
-.section02 .txt+.txt {margin-top:40px}
 
-.section02 {color:#000;background:#fff}
+/* 콘도 */
+.section03 {padding:80px 0;background:#fff}
+.section03 .intro_tit .tit {color:#ff7c02}
+.section03 .list {display:flex;margin:40px auto;width:1440px;gap:0 20px}
+.section03 .list li {width:100%;text-align:center;font-family:'Pretendard-Bold', serif;}
+.section03 .list li:before {display:block;margin-bottom:20px;width:345px;height:216px;background:#000;content:''}
 
+/* 레저와 자연 */
+.section04 {padding:80px 0;color:#fff;background: linear-gradient(0deg, rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6))}
+.section04 .intro_tit .tit {color:#1cb7c5}
+.section04 .intro_tit .txt:before {background:url('./../img/ico_leisure.png') no-repeat}
+.section04 .leisure_box {margin:40px 0}
 
-.section03 {background:red}
+/* 미식 */
+.section05 {padding:88px 0 82px}
+.section05 .intro_tit .tit {color:#ff7d02}
+.section05 .intro_tit .txt:before {background:url('./../img/ico_rice.png') no-repeat}
+.section05 .rice_box {margin:40px 0}
+
+/* 변화무쌍 */
+.section06 {padding:160px 0;color:#fff;background:#222}
+.section06 .tit {margin-bottom:40px}
+
+/* 푸터 */
+.footer {background:#1CB7C5}
+.footer ul {display:flex;align-items:center;height:70px;box-sizing:border-box}
+.footer ul li {width:100%;color:#fff;text-align:center}
+.footer ul li strong {font-family: 'Pretendard-Bold', serif}
+.footer p {padding:10px 0;color:#fff;font-size:15px;line-height:30px;text-align:center;background:#222}
