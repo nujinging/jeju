@@ -137,8 +137,9 @@ body {overflow-x:hidden}
 /* 슬라이드 */
 .section02 {padding:80px 0;background:#fff}
 .section02 .desc {margin-bottom:40px;padding:20px 0;color:#666;font-size:17px;line-height:30px;text-align:center;border:1px solid #ddd}
+.section02 .desc span {color:#222}
 
-/* 콘도 */
+    /* 콘도 */
 .section03 {padding:80px 0;background:#fff}
 .section03 .intro_tit .tit {color:#ff7c02}
 .section03 .list {display:flex;margin:40px auto;width:1440px;gap:0 20px}
@@ -167,3 +168,6 @@ body {overflow-x:hidden}
 .footer ul li {width:100%;color:#fff;text-align:center}
 .footer ul li strong {font-family: 'Pretendard-Bold', serif}
 .footer p {padding:10px 0;color:#fff;font-size:15px;line-height:30px;text-align:center;background:#222}
+
+/* 올리기 버튼 */
+.btn_top {position:fixed;right:230px;bottom:90px;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg width='22' height='13' viewBox='0 0 22 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.4281 11.4264L11 1.99832L1.57191 11.4264' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center no-repeat;box-shadow:0 0 5px rgba(0, 0, 0, 0.25)}
