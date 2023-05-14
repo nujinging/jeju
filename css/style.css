@@ -1,20 +1,129 @@
-section {
-    height: 100vh;
-    overflow: hidden;
-}
-.section > * {
-    height: 200%;
-    position: relative;
-    top: -100%;
+@charset "utf-8";
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
 }
 
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight:300;
+}
 
-.section01 {position:relative;color:#fff;background:#000}
-.section01 h1 {position:absolute;left:20px;bottom:20px;color:#fff;}
+@font-face {
+    font-family: 'Pretendard-ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+}
+
+/* RESET */
+html {color:#000;font-size:14px;background:#fff}
+html,
+body {width:100%;-webkit-text-size-adjust:none;font-family:'Pretendard-Light'}
+html,
+body {min-height:100%}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+button {margin:0;padding:0;}
+table {border-spacing:0;border-collapse:collapse;font-size:inherit;line-height:100%}
+fieldset,
+img {border:0}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {font-weight:normal;font-style:normal}
+strong,
+b {font-weight:bold}
+ol,
+ul,
+li {list-style:none}
+caption,
+th {text-align:left}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {font-size:100%;font-weight:normal}
+q:before,
+q:after {content:""}
+del,
+ins {text-decoration:none}
+abbr,
+acronym {border:0;font-variant:normal}
+sup {vertical-align:text-top}
+sub {vertical-align:text-bottom}
+legend {color:#000}
+a {color:#444;text-decoration:none}
+header,
+footer,
+section,
+nav,
+article {display:block}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit}
+input,
+button,
+textarea,
+select {line-height:normal}
+button {border:0;background:transparent;cursor:pointer}
+.blind {overflow:hidden;clip:rect(1px,1px,1px,1px);position:absolute;width:1px;height:1px}
+body {overflow-x:hidden}
+
+section .inner {margin:0 auto;width:1080px}
+
+
+.section01 {position:relative;height:100vh;color:#fff;background:#000}
+.section01 .inner {position:absolute;left:50%;bottom:130px;line-height:30px;transform:translateX(-50%)}
+.section01 .tit {color:#fff;font-size:45px;font-family: 'Pretendard-Bold', serif}
+.section01 .txt {color:#222;font-size:20px}
+
+.section02 .desc {margin-bottom:40px;padding:20px 0;color:#666;font-size:17px;line-height:30px;text-align:center;border:1px solid #ddd}
+.section02 .txt {color:#222;font-size:20px;line-height:30px}
+.section02 .txt+.txt {margin-top:40px}
+
 .section02 {color:#000;background:#fff}
 
 
 .section03 {background:red}
-#parallax1 > div, #parallax2 > div, #parallax3 > div {
-	-webkit-transform: translateZ(0);-webkit-backface-visibility: hidden;-webkit-perspective: 1000;
-}
