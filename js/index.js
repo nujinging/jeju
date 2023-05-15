@@ -75,7 +75,7 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: $('.section02'),
       start: 'top 0%',
-      end: '500',
+      end: '+=500',
       pin: true,
     },
   });
@@ -96,7 +96,6 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: $('.section03'),
       start: 'top 0%',
-      end: '+=1700',
       pin: true,
       pinSpacing: false,
     },
@@ -107,8 +106,8 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: $('.section04'),
       start: 'top 0%',
+      end: "+=600",
       pin: true,
-      pinSpacing: false,
     },
   });
 
@@ -117,13 +116,28 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: $('.section05'),
       start: 'top 0%',
-      end: '+=600',
       pin: true,
+      pinSpacing: false,
     },
   });
 
   //section6 binding
-
+  gsap.to('.section06', {
+    scrollTrigger: {
+      trigger: $('.section06'),
+      start: 'top 0%',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
+  gsap.to('.footer', {
+    scrollTrigger: {
+      trigger: $('.footer'),
+      start: 'top 86%',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
 
   //top button
   $('.top_btn').on('click', function (e) {
