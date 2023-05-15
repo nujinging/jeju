@@ -200,3 +200,16 @@ body {overflow-x:hidden}
 .animate:nth-child(3) {-webkit-animation-delay:0.7s;animation-delay:0.7s}
 .animate:nth-child(4) {-webkit-animation-delay:1.0s;animation-delay:1.0s}
 .animate:nth-child(5) {-webkit-animation-delay:1.3s;animation-delay:1.3s}
+
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
