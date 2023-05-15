@@ -179,7 +179,7 @@ body {overflow-x:hidden}
 .section05 .rice_box video {width:100%}
 
 /* 변화무쌍 */
-.section06 {padding:160px 0;color:#fff;background:url('./../img/bg_footer.png') no-repeat}
+.section06 {padding:160px 0;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
 .section06 .tit {margin-bottom:40px}
 
 /* 푸터 */
