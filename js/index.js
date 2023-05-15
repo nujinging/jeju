@@ -1,3 +1,21 @@
+const togglePlay = (e) => {
+  const _this = $(e.target);
+  const video = _this.hasClass('video') ? _this.get(0) : _this.find('video')[0];
+  const videoBox = $(video).parent();
+
+  if (video.paused || video.ended) {
+    videoBox.removeClass('video_box');
+    videoBox.addClass('active_video_box');
+    video.play();
+  } else {
+    videoBox.removeClass('active_video_box');
+    videoBox.addClass('video_box');
+    video.pause();
+
+    e.preventDefault();
+  }
+};
+
 $(document).ready(function () {
   //Swiper
   new Swiper('.swiper-container', {
@@ -13,6 +31,9 @@ $(document).ready(function () {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  //Video
+  $('.video_box').on('click', togglePlay);
 
   //Scroll Object Init
   var scrollObj = window.Scrollbar.init(document.querySelector('.scrollWrap'), { thumbMinSize: 10, speed: 2 });
@@ -151,7 +172,7 @@ $(document).ready(function () {
       trigger: $('.section05'),
       scrub: true,
     },
-    yPercent: -20,
+    yPercent: 15,
     ease: 'none',
     duration: 700,
     opacity: 0,
@@ -168,9 +189,9 @@ $(document).ready(function () {
     },
     opacity: 1,
   });
+
   gsap.to('.section06', {
     scrollTrigger: {
-      markers: true,
       trigger: $('.section06'),
       start: 'top 80%',
       scrub: true,
@@ -178,14 +199,14 @@ $(document).ready(function () {
     ease: 'power2',
     opacity: 1.6,
   });
+
   gsap.to('.section05 .inner', {
     scrollTrigger: {
-      markers: true,
       trigger: $('.section06'),
-      start: 'top 80%',
+      start: 'top 95%',
       scrub: true,
     },
-    yPercent: -90,
+    yPercent: -20,
     ease: 'none',
     opacity: 0,
   });
@@ -209,13 +230,24 @@ $(document).ready(function () {
   //txt motion
   var txtMotionList = gsap.utils.toArray('.motion');
   $(txtMotionList).each(function (index, item) {
-    ScrollTrigger.create({
-      start: 'top 70%',
-      trigger: item,
-      onEnter: () => {
-        $(item).addClass('animate');
-        $(item).removeClass('ready');
-      },
-    });
+    if ($(item).attr('id') === 'swiper') {
+      ScrollTrigger.create({
+        start: 'top 50%',
+        trigger: item,
+        onEnter: () => {
+          $(item).addClass('animate');
+          $(item).removeClass('ready');
+        },
+      });
+    } else {
+      ScrollTrigger.create({
+        start: 'top 95%',
+        trigger: item,
+        onEnter: () => {
+          $(item).addClass('animate');
+          $(item).removeClass('ready');
+        },
+      });
+    }
   });
 });

@@ -62,7 +62,7 @@
                         </p>
                     </div>
 
-                    <div class="slide_box swiper-container motion ready">
+                    <div class="slide_box swiper-container motion ready" id="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide item">
                                 <img src="./img/bg_slide01.png" alt="">
@@ -99,8 +99,9 @@
                     <!-- 동영상 자리 -->
                 </section>
                 <div class="room_box">
-                    <video muted loop id="myVideo2">
+                    <video autoplay muted loop id="myVideo2">
                         <source src="./img/intro.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
                     </video>
                 </div>
 
@@ -156,8 +157,8 @@
                                 오스카' 등은 스릴을 즐기기에 좋다.
                             </p>
                         </div>
-                        <div class="leisure_box motion ready">
-                            <video muted loop id="myVideo3">
+                        <div class="video_box motion ready" id="leisureVideoBox">
+                            <video class="video" id="myVideo3" muted loop controls>
                                 <source src="./img/intro.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -185,8 +186,8 @@
                             </p>
                         </div>
                         <!-- 동영상 자리 -->
-                        <div class="rice_box motion ready">
-                            <video muted loop id="myVideo4">
+                        <div class="video_box motion ready" id="riceVideoBox">
+                            <video class="video" muted id="myVideo4">
                                 <source src="./img/intro.mp4" type="video/mp4">
                             </video>
                         </div>
