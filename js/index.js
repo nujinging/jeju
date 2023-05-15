@@ -89,8 +89,6 @@ $(document).ready(function () {
     },
   });
 
-  
-
   //section3 binding
   gsap.to('.section03', {
     scrollTrigger: {
@@ -100,15 +98,42 @@ $(document).ready(function () {
       pinSpacing: false,
     },
   });
+  gsap.to('.room_box', {
+    scrollTrigger: {
+      trigger: $('.section03'),
+      scrub: true,
+    },
+    ease: 'none',
+    opacity: 0,
+  });
+  gsap.to('.section02', {
+    scrollTrigger: {
+      trigger: $('.section03'),
+      scrub: true,
+    },
+    yPercent: 12,
+    ease: 'none',
+    opacity: 0,
+  });
 
   //section4 binding
   gsap.to('.section04', {
     scrollTrigger: {
       trigger: $('.section04'),
       start: 'top 0%',
-      end: "+=600",
+      end: '+=600',
       pin: true,
     },
+  });
+
+  gsap.to('.cont_box', {
+    scrollTrigger: {
+      trigger: $('.section04'),
+      scrub: true,
+    },
+    yPercent: -100,
+    ease: 'none',
+    opacity: 0,
   });
 
   //section5 binding
@@ -121,6 +146,17 @@ $(document).ready(function () {
     },
   });
 
+  gsap.to('.section04 .inner', {
+    scrollTrigger: {
+      trigger: $('.section05'),
+      scrub: true,
+    },
+    yPercent: -20,
+    ease: 'none',
+    duration: 700,
+    opacity: 0,
+  });
+
   //section6 binding
   gsap.to('.section06', {
     scrollTrigger: {
@@ -128,8 +164,32 @@ $(document).ready(function () {
       start: 'top 0%',
       pin: true,
       pinSpacing: false,
+      scrub: true,
     },
+    opacity: 1,
   });
+  gsap.to('.section06', {
+    scrollTrigger: {
+      markers: true,
+      trigger: $('.section06'),
+      start: 'top 80%',
+      scrub: true,
+    },
+    ease: 'power2',
+    opacity: 1.6,
+  });
+  gsap.to('.section05 .inner', {
+    scrollTrigger: {
+      markers: true,
+      trigger: $('.section06'),
+      start: 'top 80%',
+      scrub: true,
+    },
+    yPercent: -90,
+    ease: 'none',
+    opacity: 0,
+  });
+
   gsap.to('.footer', {
     scrollTrigger: {
       trigger: $('.footer'),
@@ -144,5 +204,18 @@ $(document).ready(function () {
     e.preventDefault();
 
     scrollObj.scrollTo(0, 0, 1000);
+  });
+
+  //txt motion
+  var txtMotionList = gsap.utils.toArray('.motion');
+  $(txtMotionList).each(function (index, item) {
+    ScrollTrigger.create({
+      start: 'top 70%',
+      trigger: item,
+      onEnter: () => {
+        $(item).addClass('animate');
+        $(item).removeClass('ready');
+      },
+    });
   });
 });
