@@ -71,21 +71,32 @@ $(document).ready(function () {
   });
 
   //section2 binding
+  gsap.to('.section02', {
+    scrollTrigger: {
+      trigger: $('.section02'),
+      start: 'top 0%',
+      end: '500',
+      pin: true,
+    },
+  });
+
   gsap.to('.room_box', {
     scrollTrigger: {
       trigger: $('.room_box'),
       start: 'top 0%',
-      end: '+=3000',
       pin: true,
       pinSpacing: false,
     },
   });
 
+  
+
   //section3 binding
   gsap.to('.section03', {
     scrollTrigger: {
       trigger: $('.section03'),
-      start: 'top -30%',
+      start: 'top 0%',
+      end: '+=1700',
       pin: true,
       pinSpacing: false,
     },
@@ -95,7 +106,7 @@ $(document).ready(function () {
   gsap.to('.section04', {
     scrollTrigger: {
       trigger: $('.section04'),
-      start: 'top -36%',
+      start: 'top 0%',
       pin: true,
       pinSpacing: false,
     },
@@ -105,21 +116,14 @@ $(document).ready(function () {
   gsap.to('.section05', {
     scrollTrigger: {
       trigger: $('.section05'),
-      start: 'top -36%',
+      start: 'top 0%',
+      end: '+=600',
       pin: true,
-      pinSpacing: false,
     },
   });
 
   //section6 binding
-  gsap.to('.section06', {
-    scrollTrigger: {
-      trigger: $('.section06'),
-      start: 'top 0%',
-      pin: true,
-      pinSpacing: false,
-    },
-  });
+
 
   //top button
   $('.top_btn').on('click', function (e) {
