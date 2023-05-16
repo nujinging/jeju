@@ -228,11 +228,12 @@ body {overflow-x:hidden}
     .txt {font-size:17px;line-height:27px}
     .txt+.txt {margin-top:20px}
 
-    .section02 .desc {font-size:15px}
+    .section02 .desc {padding:10px 20px;font-size:15px;text-align:left}
 
     .intro_tit .tit {display:flex;font-size:28px;line-height:38px}
     .intro_tit .tit span {display:block}
     .intro_tit .tit:before {vertical-align:top;flex-shrink:0;display:block;align-items:center;flex-shrink:0;margin-right:40px;content:''}
+    .intro_tit .txt {margin-top:20px}
     .intro_tit .txt:before {content:none}
 
     .room_box video {width:100%}
