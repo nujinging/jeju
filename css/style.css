@@ -117,7 +117,7 @@ button {border:0;background:transparent;cursor:pointer}
 body {overflow-x:hidden}
 
 .scrollWrap {width: 100%;height: 100%;}
-.inner {margin:0 auto;width:1080px}
+.inner {margin:0 auto;width:1080px;box-sizing:border-box}
 
 .tit {font-size:35px;line-height:30px;font-family: 'Pretendard-Medium', serif}
 .txt {font-size:20px;line-height:30px}
@@ -155,11 +155,6 @@ body {overflow-x:hidden}
 .section03 .list {display:flex;margin:40px auto;width:1440px;gap:0 20px}
 .section03 .list li {width:100%;text-align:center;font-family:'Pretendard-Bold', serif;}
 .section03 .list li:hover {cursor: pointer; filter: brightness(50%);-webkit-filter: brightness(50%);-webkit-transition: all 0.4s ease;-moz-transition: all 0.4s ease;-o-transition: all 0.4s ease;-ms-transition: all 0.4s ease;transition: all 0.4s ease;}
-.section03 .list li:before {display:block;margin-bottom:20px;width:345px;height:216px;background:#000;content:''}
-.section03 .list li:nth-child(1):before {background:url('./../img/bg_room01.png') no-repeat}
-.section03 .list li:nth-child(2):before {background:url('./../img/bg_room02.png') no-repeat}
-.section03 .list li:nth-child(3):before {background:url('./../img/bg_room03.png') no-repeat}
-.section03 .list li:nth-child(4):before {background:url('./../img/bg_room04.png') no-repeat}
 .room_box {position:relative;height:460px;overflow:hidden}
 .room_box video {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}
 
@@ -220,4 +215,48 @@ body {overflow-x:hidden}
         transform: translateY(0);
         opacity: 1
     }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .header {justify-content:normal;padding-left:30px}
+    .header img {width:120px}
+    .top_btn {right:20px;width:40px;height:40px;background-size:15px}
+
+    .inner {padding:0 20px;width:100%}
+
+    .txt {font-size:17px;line-height:27px}
+    .txt+.txt {margin-top:20px}
+
+    .section02 .desc {font-size:15px}
+
+    .intro_tit .tit {display:flex;font-size:28px;line-height:38px}
+    .intro_tit .tit span {display:block}
+    .intro_tit .tit:before {vertical-align:top;flex-shrink:0;display:block;align-items:center;flex-shrink:0;margin-right:40px;content:''}
+    .intro_tit .txt:before {content:none}
+
+    .room_box video {width:100%}
+
+
+    .section01 .tit {font-size:30px;line-height:45px}
+
+    .section02 .swiper-button-prev {left:20px}
+    .section02 .swiper-button-next {right:20px}
+
+    .section03 .intro_tit .tit:before {display:inline-block;width:100px;height:86px;background:url('./../img/ico_room.png') center / 100% no-repeat}
+    .section03 .list {flex-wrap:wrap;gap:20px 10px;margin:40px 20px;width:100%}
+    .section03 .list li {width:44%}
+    .section03 .list li img {width:100%;vertical-align:top}
+    .section03 .list li span {display:block;color:#fff;font-size:15px;font-weight:bold;line-height:30px;background:#ff7f02}
+    .section04 .intro_tit .tit:before {width:75px;height:70px;background:url('./../img/ico_leisure.png') center / 100% no-repeat}
+    .section04 .video_box, .section04 .active_video_box {height:auto}
+
+    .section05 .intro_tit .tit:before {width:80px;height:80px;background:url('./../img/ico_rice.png') center / 100% no-repeat}
+    .section05 .video_box, .section05 .active_video_box {height:auto}
+
+    .section06 .tit {font-size:28px;line-height:38px}
+
+    .footer ul {flex-wrap:wrap;margin:0 auto;width:300px}
+    .footer ul li {width:50%;text-align:left}
+
 }
