@@ -33,7 +33,6 @@
                 <section class="section01" id="intro">
                     <video autoplay muted loop id="myVideo">
                         <source src="./img/intro.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video.
                     </video>
                     <div class="inner">
                         <h1 class="tit intro_text">숙박을 뛰어넘는 경험... 제주의 신</h1>
@@ -98,10 +97,11 @@
 
                     <!-- 동영상 자리 -->
                 </section>
+
+
                 <div class="room_box">
                     <video autoplay muted loop id="myVideo2">
                         <source src="./img/intro.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video.
                     </video>
                 </div>
 
@@ -253,6 +253,18 @@
     <button type="button" class="top_btn">
         <span class="blind">올리기 버튼</span>
     </button>
+
+
+    <div class="modal_box">
+        <div class="video">
+            <button type="button" class="modal_close">
+                <span class="blind">닫기</span>
+            </button>
+            <video muted="">
+                <source src="./img/intro.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
 </body>
 
 </html>
