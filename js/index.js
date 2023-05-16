@@ -34,6 +34,22 @@ $(document).ready(function () {
 
   //Video
   $('.video_box').on('click', togglePlay);
+  $('.section03 .list .motion').on('click', function() {
+    const url = $(this).attr('data-url');
+    const modalBox = $(`<div class="modal_box"></div>`);
+    const videoBox = $(`<div class="video"></div>`);
+    const closeButton = $(`<button type="button" class="modal_close"><span class="blind">닫기</span></button>`);
+    modalBox.appendTo('body');
+    videoBox.appendTo(modalBox);
+    closeButton.appendTo(videoBox);
+
+    const iframe = $(`<iframe width="${videoBox.width()}" height="${videoBox.height()}" src="${url}" frameborder="0" allowfullscreen></iframe>`);
+    iframe.appendTo(videoBox);
+    closeButton.on('click', function() {
+        $(this).parent().parent().detach();
+    });
+  });
+
 
   //Scroll Object Init
   var scrollObj = window.Scrollbar.init(document.querySelector('.scrollWrap'), { thumbMinSize: 10, speed: 2 });
