@@ -34,7 +34,7 @@ $(document).ready(function () {
 
   //Video
   $('.video_box').on('click', togglePlay);
-  $('.section03 .list .motion').on('click', function() {
+  $('.section03 .list .motion').on('click', function () {
     const url = $(this).attr('data-url');
     const modalBox = $(`<div class="modal_box"></div>`);
     const videoBox = $(`<div class="video"></div>`);
@@ -45,8 +45,8 @@ $(document).ready(function () {
 
     const iframe = $(`<iframe width="${videoBox.width()}" height="${videoBox.height()}" src="${url}" frameborder="0" allowfullscreen></iframe>`);
     iframe.appendTo(videoBox);
-    closeButton.on('click', function() {
-        $(this).parent().parent().detach();
+    closeButton.on('click', function () {
+      $(this).parent().parent().detach();
     });
   });
 
@@ -68,186 +68,6 @@ $(document).ready(function () {
   });
   ScrollTrigger.defaults({ scroller: document.querySelector('.scrollWrap') });
 
-  gsap.timeline({
-    defaults: {
-      ease: 'none',
-    },
-    scrollTrigger: {
-      start: function start() {
-        return 0;
-      },
-      end: function end() {
-        return $('#content').height();
-      },
-      invalidateOnRefresh: true,
-      scrub: 1,
-    },
-  });
-
-  //section1 binding - intro
-  gsap.to('#intro', {
-    scrollTrigger: {
-      trigger: '#intro',
-      start: 'top top',
-      scrub: true,
-    },
-    delay: 0.5,
-    opacity: '0',
-    ease: 'none',
-  });
-
-  gsap.to('#intro .intro_text', {
-    scrollTrigger: {
-      trigger: '#intro',
-      start: 'top top',
-      scrub: true,
-    },
-    delay: 0.5,
-    yPercent: +300,
-    ease: 'none',
-  });
-
-  //section2 binding
-  gsap.to('.section02', {
-    scrollTrigger: {
-      trigger: $('.section02'),
-      start: 'top 0%',
-      end: '+=500',
-      pin: true,
-    },
-  });
-
-  gsap.to('.room_box', {
-    scrollTrigger: {
-      trigger: $('.room_box'),
-      start: 'top 0%',
-      pin: true,
-      pinSpacing: false,
-    },
-  });
-
-  //section3 binding
-  gsap.to('.section03', {
-    scrollTrigger: {
-      trigger: $('.section03'),
-      start: 'top top',
-      end: 'bottom bottom',
-      pin: true,
-    },
-  });
-
-  gsap.to('.room_box', {
-    scrollTrigger: {
-      trigger: $('.section03'),
-      scrub: true,
-    },
-    ease: 'none',
-    opacity: 0,
-  });
-  gsap.to('.section02', {
-    scrollTrigger: {
-      trigger: $('.section03'),
-      start: 'top bottom',
-      end: 'top top',
-      scrub: true,
-    },
-    yPercent: 6,
-    ease: 'none',
-    opacity: 0.5,
-  });
-
-
- //section4 binding
- gsap.to('.section03', {
-  scrollTrigger: {
-    trigger: $('.section04'),
-    scrub: true,
-    start: 'top bottom',
-    end: 'top top',
-    pin: '.section03',
-    pinSpacing: false,
-  },
-});
-gsap.to('.section04', {
-  scrollTrigger: {
-    trigger: $('.section04'),
-    scrub: true,
-    start: 'top top',
-    end: '100',
-    pin: true,
-  },
-});
-
-
-gsap.to('.cont_box', {
-  scrollTrigger: {
-    trigger: $('.section04'),
-    scrub: true,
-    start: 'top bottom'
-  },
-  y: -500,
-  ease: Power0,
-  opacity: 0.5,
-});
-
-
-
-//section5 binding
-gsap.to('.section04 .inner', {
-  scrollTrigger: {
-    trigger: $('.section05'),
-    scrub: true,
-    start: 'top bottom',
-    end: 'top top'
-  },
-  yPercent: 5,
-  ease: Power3,
-});
-
-gsap.to('.section05', {
-  scrollTrigger: {
-    trigger: $('.section05'),
-    start: 'top top',
-    pin: true,
-    pinSpacing: false,
-  },
-});
-
-//section6
-gsap.to('.section06', {
-  scrollTrigger: {
-    trigger: $('#section06'),
-    start: 'top top',
-    scrub: true,
-    pin: true,
-    pinSpacing: false,
-  },
-});
-
-
-gsap.to('.section05 .inner', {
-  scrollTrigger: {
-    trigger: $('#section06'),
-    start: 'top 80%',
-    scrub: true,
-  },
-  yPercent: -40,
-  ease: 'none',
-  opacity: 0.5,
-});
-
-gsap.to('.section06', {
-  scrollTrigger: {
-    trigger: $('#section06'),
-    start: 'top 80%',
-    scrub: true,
-  },
-  ease: Power0,
-  opacity: 1.2,
-});
-
-
-
   //top button
   $('.top_btn').on('click', function (e) {
     e.preventDefault();
@@ -255,26 +75,218 @@ gsap.to('.section06', {
     scrollObj.scrollTo(0, 0, 1000);
   });
 
-  //txt motion
-  var txtMotionList = gsap.utils.toArray('.motion');
-  $(txtMotionList).each(function (index, item) {
-    if ($(item).attr('id') === 'swiper') {
-      ScrollTrigger.create({
-        start: 'top 50%',
-        trigger: item,
-        onEnter: () => {
-          $(item).addClass('animate');
-          $(item).removeClass('ready');
+  //Animation
+  ScrollTrigger.matchMedia({
+
+    // desktop
+    "(min-width: 1200px)": function () {
+      //section2 binding
+      gsap.to('.section02', {
+        scrollTrigger: {
+          trigger: $('.section02'),
+          start: 'top 0%',
+          end: '+=500',
+          pin: true,
         },
       });
-    } else {
-      ScrollTrigger.create({
-        start: 'top 95%',
-        trigger: item,
-        onEnter: () => {
-          $(item).addClass('animate');
-          $(item).removeClass('ready');
+
+      gsap.to('.room_box', {
+        scrollTrigger: {
+          trigger: $('.room_box'),
+          start: 'top 0%',
+          pin: true,
+          pinSpacing: false,
         },
+      });
+
+      //section3 binding
+      gsap.to('.section03', {
+        scrollTrigger: {
+          trigger: $('.section03'),
+          start: 'top top',
+          end: 'bottom bottom',
+          pin: true,
+        },
+      });
+
+      gsap.to('.room_box', {
+        scrollTrigger: {
+          trigger: $('.section03'),
+          scrub: true,
+        },
+        ease: 'none',
+        opacity: 0,
+      });
+      gsap.to('.section02', {
+        scrollTrigger: {
+          trigger: $('.section03'),
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true,
+        },
+        yPercent: 6,
+        ease: 'none',
+        opacity: 0.5,
+      });
+
+
+      //section4 binding
+      gsap.to('.section03', {
+        scrollTrigger: {
+          trigger: $('.section04'),
+          scrub: true,
+          start: 'top bottom',
+          end: 'top top',
+          pin: '.section03',
+          pinSpacing: false,
+        },
+      });
+      gsap.to('.section04', {
+        scrollTrigger: {
+          trigger: $('.section04'),
+          scrub: true,
+          start: 'top top',
+          end: '100',
+          pin: true,
+        },
+      });
+
+
+      gsap.to('.cont_box', {
+        scrollTrigger: {
+          trigger: $('.section04'),
+          scrub: true,
+          start: 'top bottom'
+        },
+        y: -500,
+        ease: Power0,
+        opacity: 0.5,
+      });
+
+
+
+      //section5 binding
+      gsap.to('.section04 .inner', {
+        scrollTrigger: {
+          trigger: $('.section05'),
+          scrub: true,
+          start: 'top bottom',
+          end: 'top top'
+        },
+        yPercent: 5,
+        ease: Power3,
+      });
+
+      gsap.to('.section05', {
+        scrollTrigger: {
+          trigger: $('.section05'),
+          start: 'top -10%',
+          pin: true,
+          pinSpacing: false,
+        },
+      });
+
+      //section6
+      gsap.to('.section06', {
+        scrollTrigger: {
+          trigger: $('#section06'),
+          start: 'top top',
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+        },
+      });
+
+
+      gsap.to('.section05 .inner', {
+        scrollTrigger: {
+          trigger: $('#section06'),
+          start: 'top 80%',
+          scrub: true,
+        },
+        yPercent: -40,
+        ease: 'none',
+        opacity: 0.5,
+      });
+
+      gsap.to('.section06', {
+        scrollTrigger: {
+          trigger: $('#section06'),
+          start: 'top 80%',
+          scrub: true,
+        },
+        ease: Power0,
+        opacity: 1.2,
+      });
+    },
+
+    // mobile
+    "(max-width: 1199px)": function () {
+    },
+
+    // all 
+    "all": function () {
+      gsap.timeline({
+        defaults: {
+          ease: 'none',
+        },
+        scrollTrigger: {
+          start: function start() {
+            return 0;
+          },
+          end: function end() {
+            return $('#content').height();
+          },
+          invalidateOnRefresh: true,
+          scrub: 1,
+        },
+      });
+
+      //section1 binding - intro
+      gsap.to('#intro', {
+        scrollTrigger: {
+          trigger: '#intro',
+          start: 'top top',
+          scrub: true,
+        },
+        delay: 0.5,
+        opacity: '0',
+        ease: 'none',
+      });
+
+      gsap.to('#intro .intro_text', {
+        scrollTrigger: {
+          trigger: '#intro',
+          start: 'top top',
+          scrub: true,
+        },
+        delay: 0.5,
+        yPercent: +300,
+        ease: 'none',
+      });
+
+      //txt motion
+      var txtMotionList = gsap.utils.toArray('.motion');
+      $(txtMotionList).each(function (index, item) {
+        if ($(item).attr('id') === 'swiper') {
+          ScrollTrigger.create({
+            start: 'top 50%',
+            trigger: item,
+            onEnter: () => {
+              $(item).addClass('animate');
+              $(item).removeClass('ready');
+            },
+          });
+        } else {
+          ScrollTrigger.create({
+            start: 'top 95%',
+            trigger: item,
+            onEnter: () => {
+              $(item).addClass('animate');
+              $(item).removeClass('ready');
+            },
+          });
+        }
       });
     }
   });
