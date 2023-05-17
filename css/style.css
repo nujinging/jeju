@@ -174,11 +174,11 @@ body {overflow-x:hidden}
 .section05 .video_box video,.section05 .active_video_box video {width:100%}
 
 /* 변화무쌍 */
-.section06 {opacity:0.5;padding:160px 0;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
+.section06 {opacity:0.5;padding:160px 0 160px;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
 .section06 .tit {margin-bottom:40px}
 
 /* 푸터 */
-.footer {background:#1CB7C5;bottom: 30px;position: absolute; width: 100%;}
+.footer {background:#1CB7C5;}
 .footer ul {display:flex;align-items:center;height:110px;box-sizing:border-box}
 .footer ul li {width:100%;color:#fff;text-align:center}
 .footer ul li strong {font-family: 'Pretendard-Bold', serif}
@@ -253,7 +253,8 @@ body {overflow-x:hidden}
 
     .section05 .intro_tit .tit:before {width:80px;height:80px;background:url('./../img/ico_rice.png') center / 100% no-repeat}
     .section05 .video_box, .section05 .active_video_box {height:auto}
-
+    
+    .section06 {opacity:1;}
     .section06 .tit {font-size:28px;line-height:38px}
 
     .footer ul {flex-wrap:wrap;margin:0 auto;width:300px}

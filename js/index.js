@@ -80,6 +80,29 @@ $(document).ready(function () {
 
     // desktop
     "(min-width: 1200px)": function () {
+      //section1 binding - intro
+      gsap.to('#intro', {
+        scrollTrigger: {
+          trigger: '#intro',
+          start: 'top top',
+          scrub: true,
+        },
+        delay: 0.5,
+        opacity: '0',
+        ease: 'none',
+      });
+
+      gsap.to('#intro .intro_text', {
+        scrollTrigger: {
+          trigger: '#intro',
+          start: 'top top',
+          scrub: true,
+        },
+        delay: 0.5,
+        yPercent: +300,
+        ease: 'none',
+      });
+
       //section2 binding
       gsap.to('.section02', {
         scrollTrigger: {
@@ -163,8 +186,6 @@ $(document).ready(function () {
         opacity: 0.5,
       });
 
-
-
       //section5 binding
       gsap.to('.section04 .inner', {
         scrollTrigger: {
@@ -197,7 +218,6 @@ $(document).ready(function () {
         },
       });
 
-
       gsap.to('.section05 .inner', {
         scrollTrigger: {
           trigger: $('#section06'),
@@ -217,52 +237,6 @@ $(document).ready(function () {
         },
         ease: Power0,
         opacity: 1.2,
-      });
-    },
-
-    // mobile
-    "(max-width: 1199px)": function () {
-    },
-
-    // all 
-    "all": function () {
-      gsap.timeline({
-        defaults: {
-          ease: 'none',
-        },
-        scrollTrigger: {
-          start: function start() {
-            return 0;
-          },
-          end: function end() {
-            return $('#content').height();
-          },
-          invalidateOnRefresh: true,
-          scrub: 1,
-        },
-      });
-
-      //section1 binding - intro
-      gsap.to('#intro', {
-        scrollTrigger: {
-          trigger: '#intro',
-          start: 'top top',
-          scrub: true,
-        },
-        delay: 0.5,
-        opacity: '0',
-        ease: 'none',
-      });
-
-      gsap.to('#intro .intro_text', {
-        scrollTrigger: {
-          trigger: '#intro',
-          start: 'top top',
-          scrub: true,
-        },
-        delay: 0.5,
-        yPercent: +300,
-        ease: 'none',
       });
 
       //txt motion
@@ -287,6 +261,75 @@ $(document).ready(function () {
             },
           });
         }
+      });
+    },
+
+    // mobile
+    "(max-width: 1199px)": function () {
+      //section1 binding - intro
+      gsap.to('#intro', {
+        scrollTrigger: {
+          trigger: '#intro',
+          start: 'top top',
+          scrub: true,
+        },
+        delay: 0.5,
+        opacity: '0',
+        ease: 'none',
+      });
+
+      gsap.to('#intro .intro_text', {
+        scrollTrigger: {
+          trigger: '#intro',
+          start: 'top top',
+          scrub: true,
+        },
+        delay: 0.5,
+        yPercent: +200,
+        ease: 'none',
+      });
+
+      //txt motion
+      var txtMotionList = gsap.utils.toArray('.motion');
+      $(txtMotionList).each(function (index, item) {
+        if ($(item).attr('id') === 'swiper') {
+          ScrollTrigger.create({
+            start: 'top 60%',
+            trigger: item,
+            onEnter: () => {
+              $(item).addClass('animate');
+              $(item).removeClass('ready');
+            },
+          });
+        } else {
+          ScrollTrigger.create({
+            start: 'top 95%',
+            trigger: item,
+            onEnter: () => {
+              $(item).addClass('animate');
+              $(item).removeClass('ready');
+            },
+          });
+        }
+      });
+    },
+
+    // all 
+    "all": function () {
+      gsap.timeline({
+        defaults: {
+          ease: 'none',
+        },
+        scrollTrigger: {
+          start: function start() {
+            return 0;
+          },
+          end: function end() {
+            return $('#content').height();
+          },
+          invalidateOnRefresh: true,
+          scrub: 1,
+        },
       });
     }
   });
