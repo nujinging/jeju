@@ -130,11 +130,12 @@ $(document).ready(function () {
   gsap.to('.section03', {
     scrollTrigger: {
       trigger: $('.section03'),
-      start: 'top 0%',
+      start: 'top top',
+      end: 'bottom bottom',
       pin: true,
-      pinSpacing: false,
     },
   });
+
   gsap.to('.room_box', {
     scrollTrigger: {
       trigger: $('.section03'),
@@ -146,95 +147,106 @@ $(document).ready(function () {
   gsap.to('.section02', {
     scrollTrigger: {
       trigger: $('.section03'),
+      start: 'top bottom',
+      end: 'top top',
       scrub: true,
     },
-    yPercent: 12,
+    yPercent: 6,
     ease: 'none',
-    opacity: 0,
+    opacity: 0.5,
   });
 
-  //section4 binding
-  gsap.to('.section04', {
-    scrollTrigger: {
-      trigger: $('.section04'),
-      start: 'top 0%',
-      end: '+=600',
-      pin: true,
-    },
-  });
 
-  gsap.to('.cont_box', {
-    scrollTrigger: {
-      trigger: $('.section04'),
-      scrub: true,
-    },
-    yPercent: -100,
-    ease: 'none',
-    opacity: 0,
-  });
+ //section4 binding
+ gsap.to('.section03', {
+  scrollTrigger: {
+    trigger: $('.section04'),
+    scrub: true,
+    start: 'top bottom',
+    end: 'top top',
+    pin: '.section03',
+    pinSpacing: false,
+  },
+});
+gsap.to('.section04', {
+  scrollTrigger: {
+    trigger: $('.section04'),
+    scrub: true,
+    start: 'top top',
+    end: '100',
+    pin: true,
+  },
+});
 
-  //section5 binding
-  gsap.to('.section05', {
-    scrollTrigger: {
-      trigger: $('.section05'),
-      start: 'top 0%',
-      pin: true,
-      pinSpacing: false,
-    },
-  });
 
-  gsap.to('.section04 .inner', {
-    scrollTrigger: {
-      trigger: $('.section05'),
-      scrub: true,
-    },
-    yPercent: 15,
-    ease: 'none',
-    duration: 700,
-    opacity: 0,
-  });
+gsap.to('.cont_box', {
+  scrollTrigger: {
+    trigger: $('.section04'),
+    scrub: true,
+    start: 'top bottom'
+  },
+  y: -500,
+  ease: Power0,
+  opacity: 0.5,
+});
 
-  //section6 binding
-  gsap.to('.section06', {
-    scrollTrigger: {
-      trigger: $('.section06'),
-      start: 'top 0%',
-      pin: true,
-      pinSpacing: false,
-      scrub: true,
-    },
-    opacity: 1,
-  });
 
-  gsap.to('.section06', {
-    scrollTrigger: {
-      trigger: $('.section06'),
-      start: 'top 80%',
-      scrub: true,
-    },
-    ease: 'power2',
-    opacity: 1.6,
-  });
 
-  gsap.to('.section05 .inner', {
-    scrollTrigger: {
-      trigger: $('.section06'),
-      start: 'top 95%',
-      scrub: true,
-    },
-    yPercent: -20,
-    ease: 'none',
-    opacity: 0,
-  });
+//section5 binding
+gsap.to('.section04 .inner', {
+  scrollTrigger: {
+    trigger: $('.section05'),
+    scrub: true,
+    start: 'top bottom',
+    end: 'top top'
+  },
+  yPercent: 5,
+  ease: Power3,
+});
 
-  gsap.to('.footer', {
-    scrollTrigger: {
-      trigger: $('.footer'),
-      start: 'top 86%',
-      pin: true,
-      pinSpacing: false,
-    },
-  });
+gsap.to('.section05', {
+  scrollTrigger: {
+    trigger: $('.section05'),
+    start: 'top top',
+    pin: true,
+    pinSpacing: false,
+  },
+});
+
+//section6
+gsap.to('.section06', {
+  scrollTrigger: {
+    trigger: $('#section06'),
+    start: 'top top',
+    scrub: true,
+    pin: true,
+    pinSpacing: false,
+  },
+});
+
+
+gsap.to('.section05 .inner', {
+  scrollTrigger: {
+    trigger: $('#section06'),
+    start: 'top 80%',
+    scrub: true,
+  },
+  yPercent: -40,
+  ease: 'none',
+  opacity: 0.5,
+});
+
+gsap.to('.section06', {
+  scrollTrigger: {
+    trigger: $('#section06'),
+    start: 'top 80%',
+    scrub: true,
+  },
+  ease: Power0,
+  opacity: 1.2,
+});
+
+
 
   //top button
   $('.top_btn').on('click', function (e) {
