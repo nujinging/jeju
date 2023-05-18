@@ -136,7 +136,7 @@ body::-webkit-scrollbar {
 .header {position:absolute;top:0;display:flex;align-items:center;justify-content:center;width:100%;height:50px;background:#E16F00;z-index:1}
 
 /* 랜드마크 */
-.section01 {position:relative;height:100vh;color:#fff;overflow:hidden}
+.section01 {position:relative;height:100vh;color:#fff;overflow:hidden;pointer-events:none}
 .section01 iframe {position:absolute;right:0;bottom:0;min-width:100%;min-height:100%;pointer-events:none}
 .section01 .inner {position:absolute;left:50%;bottom:130px;line-height:30px;transform:translateX(-50%)}
 .section01 .tit {color:#fff;font-size:45px;font-family: 'Pretendard-Bold', serif}
@@ -164,6 +164,8 @@ body::-webkit-scrollbar {
 .section03 .list li:hover:after {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);display:inline-block;width:60px;height:45px;background:url("data:image/svg+xml,%3Csvg width='60' height='43' viewBox='0 0 60 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_177_211)'%3E%3Cpath d='M35.2017 14.9192C35.2017 17.896 32.8721 20.308 29.9984 20.308C27.1246 20.308 24.795 17.8949 24.795 14.9192C24.795 11.9435 27.1246 9.52924 29.9984 9.52924C32.8721 9.52924 35.2017 11.9424 35.2017 14.9192Z' fill='%23FF7F02'/%3E%3Cpath d='M18.6684 25.6697H41.3305C44.1387 25.6697 46.4126 23.3109 46.4126 20.4054V9.43643C46.4126 6.52979 44.1387 4.1721 41.3305 4.1721H40.1581C39.6708 1.78838 37.6318 0.00115967 35.1897 0.00115967H24.8115C22.3671 0.00115967 20.3293 1.78838 19.843 4.17097H18.6706C15.8646 4.17097 13.5886 6.52866 13.5886 9.4353V20.4043C13.5864 23.3109 15.8624 25.6708 18.6695 25.6708L18.6684 25.6697ZM29.9984 7.23834C34.0916 7.23834 37.4111 10.677 37.4111 14.9169C37.4111 19.1569 34.0916 22.5978 29.9984 22.5978C25.9052 22.5978 22.5857 19.1592 22.5857 14.9192C22.5857 10.6792 25.9052 7.23834 29.9984 7.23834ZM17.2895 8.11893H19.8321C20.5915 8.11893 21.2089 8.75618 21.2089 9.54396C21.2089 10.3317 20.5937 10.9701 19.8321 10.9701H17.2895C16.5311 10.9701 15.9127 10.334 15.9127 9.54396C15.9149 8.75844 16.5311 8.11893 17.2895 8.11893Z' fill='%23FF7F02'/%3E%3Cpath d='M48.5149 10.3838C48.5149 10.3838 63.5031 18.6328 53.9935 27.4184C52.4485 28.8434 45.5777 33.3415 35.2039 34.2232V38.633C41.2977 37.9425 50.8871 35.904 56.3198 29.9017C67.8793 17.1274 48.5159 10.3826 48.5159 10.3826L48.5149 10.3838Z' fill='%23FF7F02'/%3E%3Cpath d='M30.7785 35.3098L23.8455 30.3975C22.9429 29.7569 22.2021 30.161 22.2021 31.2951V33.9097C13.287 32.5786 7.41818 28.7212 6.00754 27.4162C-3.50422 18.6306 11.4862 10.3815 11.4862 10.3815C11.4862 10.3815 -7.87821 17.1263 3.68123 29.9006C8.39504 35.1084 16.2306 37.3302 22.2032 38.2799V41.6528C22.2032 42.7904 22.944 43.1911 23.8466 42.5527L30.7796 37.6392C31.6855 36.9975 31.6855 35.9494 30.7796 35.3087L30.7785 35.3098Z' fill='%23FF7F02'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_177_211'%3E%3Crect width='60' height='42.8571' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") center no-repeat;z-index:1;content:''}
 .section03 .list li span {display:block;margin-top:20px}
 .section03 .list li:hover span {color:#FF7F02}
+
+.room_box.mobile {display:none}
 .room_box {position:relative;height:460px;overflow:hidden}
 .room_box iframe {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);pointer-events:none}
 .room_box:after {transition:all 0.3s;content:''}
@@ -190,6 +192,10 @@ body::-webkit-scrollbar {
 /* .section05 .video_box:hover:before {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;background:#000;transition:all 0.3s;content:''} */
 /* .section05 .video_box:hover:after {background:url("data:image/svg+xml,%3Csvg width='60' height='61' viewBox='0 0 60 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30.8193' r='29' fill='white' stroke='white' stroke-width='2'/%3E%3Cpath d='M23.875 38.6375V20.4557L39.3295 29.5466L23.875 38.6375Z' fill='%23FF7F02'/%3E%3C/svg%3E%0A") center no-repeat;transition:all 0.3s} */
 .section05:before {position:absolute;right:-45px;bottom:-75px;display:block;width:414px;height:474px;background:url('./../img/bg_section05.png') no-repeat;content:''}
+
+.section04 .video_box.mobile,
+.section05 .video_box.mobile {display:none}
+
 
 /* 변화무쌍 */
 .section06 {opacity:0.5;padding:135px 0 135px;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
@@ -257,11 +263,11 @@ body::-webkit-scrollbar {
 
     .intro_tit .tit {display:flex;font-size:28px;line-height:38px}
     .intro_tit .tit span {display:block}
-    .intro_tit .tit:before {vertical-align:top;flex-shrink:0;display:block;align-items:center;flex-shrink:0;margin-right:40px;content:''}
+    .intro_tit .tit:before {vertical-align:top;flex-shrink:0;display:block;align-items:center;margin-right:40px;content:''}
     .intro_tit .txt {margin-top:20px}
     .intro_tit .txt:before {content:none}
 
-    .room_box video {width:100%}
+
 
 
     .section01 .tit {font-size:30px;line-height:45px}
@@ -293,7 +299,7 @@ body::-webkit-scrollbar {
     .section05 {padding-bottom:60px}
     .section05 .intro_tit .tit:before {width:80px;height:80px;background:url('./../img/ico_rice.png') center / 100% no-repeat}
     .section05 .video_box, .section05 .active_video_box {height:auto}
-    
+
     .section06 {opacity:1;padding:60px 0 0;background:url('./../img/bg_footer.png') center / cover no-repeat}
     .section06 .tit {font-size:28px;line-height:38px}
     .section06 .tit span {display:block}
@@ -302,6 +308,8 @@ body::-webkit-scrollbar {
     .footer ul {flex-wrap:wrap;margin:0 auto;padding:10px 0;width:340px;height:auto}
     .footer ul li {width:50%;text-align:left;line-height:30px}
     .footer ul li:nth-child(4) {text-align:inherit;}
+
+
 
     .swiper-container {display:none}
     .mobile_box {display:block;margin-top:30px;padding-bottom:50px}
@@ -316,9 +324,14 @@ body::-webkit-scrollbar {
     .mobile_box .swiper-pagination-bullet-active {background:#FF8D0E}
 
     .modal_box .video {width:70%}
-    .modal_box button {right:0%}
+    .modal_box button {right:0}
 
+    .room_box.mobile {display:block}
+    .room_box.pc {display:none}
     .room_box:hover:after,
     .section04 .video_box:after,
     .section05 .video_box:after {content:none}
+
+    .section04 .video_box.mobile,
+    .section05 .video_box.mobile {display:block}
 }
