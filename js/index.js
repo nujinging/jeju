@@ -18,9 +18,9 @@ const togglePlay = (e) => {
 
 $(document).ready(function () {
   const STANDARD_VIEWPORT_HEIGHT = 937;
-  const DEFAULT_FOOTER_PADDING = 110;
+  const DEFAULT_FOOTER_PADDING = 135;
   const viewportHeight = $(window).height();
-  const footerPadding = DEFAULT_FOOTER_PADDING + (viewportHeight - STANDARD_VIEWPORT_HEIGHT);
+  const footerPadding = DEFAULT_FOOTER_PADDING + (Math.abs(viewportHeight - STANDARD_VIEWPORT_HEIGHT) / 2);
 
   const section03PaddingTop = Math.abs(parseInt($('.room_box').css('height')) - parseInt($('#myVideo2').css('height')));
   const addPaddingTop = 180 - section03PaddingTop;
@@ -214,6 +214,7 @@ $(document).ready(function () {
         scrollTrigger: {
           trigger: $('#section06'),
           start: 'top top',
+          end:'0',
           scrub: true,
           pin: true,
           pinSpacing: false,
@@ -245,6 +246,7 @@ $(document).ready(function () {
         scrollTrigger: {
           trigger: '#section06',
         },
+        paddingTop: footerPadding,
         paddingBottom: footerPadding,
       });
 

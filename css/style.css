@@ -192,7 +192,7 @@ body::-webkit-scrollbar {
 .section05:before {position:absolute;right:-45px;bottom:-75px;display:block;width:414px;height:474px;background:url('./../img/bg_section05.png') no-repeat;content:''}
 
 /* 변화무쌍 */
-.section06 {opacity:0.5;padding:160px 0 110px;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
+.section06 {opacity:0.5;padding:135px 0 135px;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
 .section06 .tit {margin-bottom:40px}
 
 /* 푸터 */
