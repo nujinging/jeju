@@ -130,15 +130,6 @@ $(document).ready(function () {
       });
 
       //section3 binding
-      gsap.to('.section03', {
-        scrollTrigger: {
-          trigger: $('.section03'),
-          start: 'top top',
-          end: 'bottom bottom',
-          pin: true,
-        },
-      });
-
       gsap.to('.room_box', {
         scrollTrigger: {
           trigger: $('.section03'),
@@ -187,7 +178,7 @@ $(document).ready(function () {
           scrub: true,
           start: 'top bottom'
         },
-        y: -500,
+        y: -300,
         ease: Power0,
         opacity: 0.5,
       });
