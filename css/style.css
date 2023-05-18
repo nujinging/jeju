@@ -114,7 +114,12 @@ textarea,
 select {line-height:normal}
 button {border:0;background:transparent;cursor:pointer}
 .blind {overflow:hidden;clip:rect(1px,1px,1px,1px);position:absolute;width:1px;height:1px}
-body {overflow-x:hidden}
+body {overflow-x:hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 
 .scrollWrap {width: 100%;height: 100%;}
 .inner {margin:0 auto;width:1080px;box-sizing:border-box}
@@ -176,7 +181,7 @@ body {overflow-x:hidden}
 
 
 /* 미식 */
-.section05 {padding:50px 0 160px;background:#fff;height:100%}
+.section05 {padding:80px 0 160px;background:#fff;height:100%}
 .section05 .intro_tit .tit {color:#ff7d02}
 .section05 .intro_tit .txt:before {background:url('./../img/ico_rice.png') no-repeat}
 .section05 .video_box, .section05 .active_video_box {position:relative;margin:40px 0;height:440px;overflow:hidden}
@@ -186,7 +191,7 @@ body {overflow-x:hidden}
 .section05 .video_box:hover:after {background:url("data:image/svg+xml,%3Csvg width='60' height='61' viewBox='0 0 60 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30.8193' r='29' fill='white' stroke='white' stroke-width='2'/%3E%3Cpath d='M23.875 38.6375V20.4557L39.3295 29.5466L23.875 38.6375Z' fill='%23FF7F02'/%3E%3C/svg%3E%0A") center no-repeat;transition:all 0.3s}
 
 /* 변화무쌍 */
-.section06 {opacity:0.5;padding:160px 0 160px;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
+.section06 {opacity:0.5;padding:160px 0 110px;color:#fff;background:url('./../img/bg_footer.png') center / 100% 100% no-repeat}
 .section06 .tit {margin-bottom:40px}
 
 /* 푸터 */
@@ -290,9 +295,11 @@ body {overflow-x:hidden}
     .section06 {opacity:1;padding:60px 0 0}
     .section06 .tit {font-size:28px;line-height:38px}
     .section06 .tit span {display:block}
+    .section06 .inner {padding-bottom:60px;}
 
     .footer ul {flex-wrap:wrap;margin:0 auto;padding:10px 0;width:340px;height:auto}
     .footer ul li {width:50%;text-align:left;line-height:30px}
+    .footer ul li:nth-child(4) {text-align:inherit;}
 
     .swiper-container {display:none}
     .mobile_box {display:block;margin-top:30px;padding-bottom:50px}
@@ -307,7 +314,7 @@ body {overflow-x:hidden}
     .mobile_box .swiper-pagination-bullet-active {background:#FF8D0E}
 
     .modal_box .video {width:70%}
-    .modal_box button {right:calc(50% - 300px)}
+    .modal_box button {right:0%}
 
     .room_box:hover:after,
     .section04 .video_box:after,

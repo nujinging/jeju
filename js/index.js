@@ -17,6 +17,13 @@ const togglePlay = (e) => {
 };
 
 $(document).ready(function () {
+  const STANDARD_VIEWPORT_HEIGHT = 937;
+  const DEFAULT_FOOTER_PADDING = 110;
+  const viewportHeight = $(window).height();
+  const footerPadding = DEFAULT_FOOTER_PADDING + (viewportHeight - STANDARD_VIEWPORT_HEIGHT);
+
+  console.log(footerPadding);
+
   //Swiper
   new Swiper('.swiper-container', {
     loop: true,
@@ -77,7 +84,7 @@ $(document).ready(function () {
 
   //Animation
   ScrollTrigger.matchMedia({
-
+    
     // desktop
     "(min-width: 1200px)": function () {
       //section1 binding - intro
@@ -158,8 +165,7 @@ $(document).ready(function () {
         scrollTrigger: {
           trigger: $('.section04'),
           scrub: true,
-          start: 'top bottom',
-          end: 'top top',
+          start: 'top 85%',
           pin: '.section03',
           pinSpacing: false,
         },
@@ -198,16 +204,17 @@ $(document).ready(function () {
         ease: Power3,
       });
 
+
+      //section6
       gsap.to('.section05', {
         scrollTrigger: {
-          trigger: $('.section05'),
-          start: 'top -10%',
-          pin: true,
+          trigger: $('.section06'),
+          start: 'top 85%',
+          pin: '.section05',
           pinSpacing: false,
         },
       });
 
-      //section6
       gsap.to('.section06', {
         scrollTrigger: {
           trigger: $('#section06'),
@@ -237,6 +244,13 @@ $(document).ready(function () {
         },
         ease: Power0,
         opacity: 1.2,
+      });
+
+      gsap.to('.section06', {
+        scrollTrigger: {
+          trigger: '#section06',
+        },
+        paddingBottom: footerPadding,
       });
 
       //txt motion
