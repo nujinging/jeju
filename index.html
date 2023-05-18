@@ -35,7 +35,7 @@
                         <source src="./img/intro.mp4" type="video/mp4">
                     </video>
                     <div class="inner">
-                        <h1 class="tit intro_text">숙박을 뛰어넘는 경험... 제주의 신(新) 랜드마크</h1>
+                        <h1 class="tit intro_text">숙박을 뛰어넘는 경험... <span>제주의 신(新) 랜드마크</span></h1>
                     </div>
                 </section>
 
@@ -43,7 +43,7 @@
                 <section class="section02" id="rand-mark">
                     <div class="inner">
                         <p class="desc motion ready">
-                            기사는 더 이상 이미지와 텍스트만의 몫은 아닙니다. '인터렉티브 시리즈'는 다양한 분야의 이슈를 영상·이미지·인포그래픽 등을 통해 보도하는 코너입니다.<br />
+                            기사는 더 이상 이미지와 텍스트만의 몫은 아닙니다. '인터렉티브 시리즈'는 다양한 분야의 이슈를 영상·이미지·인포그래픽 등을 통해 보도하는 코너입니다.
                             실제로 경험하고 느낀 밀착형 정보를 하나의 디지털 콘텐츠로 정리해 생생한 현장의 느낌을 독자 여러분과 나누고자 합니다.<span>「편집자주」</span>
                         </p>
                         <p class="txt motion ready">
@@ -75,6 +75,24 @@
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
+                    </div>
+
+
+                    <div class="mobile_box">
+                        <div class="slide_box slide_mobile motion ready" id="swiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide item">
+                                    <img src="./img/bg_slide01.png" alt="">
+                                </div>
+                                <div class="swiper-slide item">
+                                    <img src="./img/bg_slide01.png" alt="">
+                                </div>
+                                <div class="swiper-slide item">
+                                    <img src="./img/bg_slide01.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
 
                     <div class="inner">
@@ -122,24 +140,26 @@
                             </div>
                         </div>
 
-                        <ul class="list">
-                            <li class="motion ready" data-url="https://www.youtube.com/embed/6VdHUxYxjSQ">
-                                <img src="./img/bg_room01.png" alt="">
-                                <span>서머셋</span>
-                            </li>
-                            <li class="motion ready" data-url="https://www.youtube.com/embed/4r4P8Jva39A">
-                                <img src="./img/bg_room02.png" alt="">
-                                <span>메리어트관</span>
-                            </li>
-                            <li class="motion ready" data-url="https://www.youtube.com/embed/sPyAQQklc1s">
-                                <img src="./img/bg_room03.png" alt="">
-                                <span>신화관</span>
-                            </li>
-                            <li class="motion ready" data-url="https://www.youtube.com/embed/brsZjP79u58">
-                                <img src="./img/bg_room04.png" alt="">
-                                <span>랜딩관</span>
-                            </li>
-                        </ul>
+                       <div class="list_box">
+                           <ul class="list">
+                               <li class="motion ready" data-url="https://www.youtube.com/embed/6VdHUxYxjSQ">
+                                   <img src="./img/bg_room01.png" alt="">
+                                   <span>서머셋</span>
+                               </li>
+                               <li class="motion ready" data-url="https://www.youtube.com/embed/4r4P8Jva39A">
+                                   <img src="./img/bg_room02.png" alt="">
+                                   <span>메리어트관</span>
+                               </li>
+                               <li class="motion ready" data-url="https://www.youtube.com/embed/sPyAQQklc1s">
+                                   <img src="./img/bg_room03.png" alt="">
+                                   <span>신화관</span>
+                               </li>
+                               <li class="motion ready" data-url="https://www.youtube.com/embed/brsZjP79u58">
+                                   <img src="./img/bg_room04.png" alt="">
+                                   <span>랜딩관</span>
+                               </li>
+                           </ul>
+                       </div>
 
                         <div class="inner">
                             <p class="txt motion ready">
@@ -210,6 +230,7 @@
                         </p>
                     </div>
                 </div>
+
                 <div id="section06">
                     <section class="section06">
                         <div class="inner">
@@ -263,6 +284,17 @@
     <button type="button" class="top_btn">
         <span class="blind">올리기 버튼</span>
     </button>
+
 </body>
 
+<script>
+    var swiper = new Swiper(".slide_mobile", {
+        spaceBetween: 30,
+        slidesPerView: 1,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
 </html>
