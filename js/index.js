@@ -22,7 +22,11 @@ $(document).ready(function () {
   const viewportHeight = $(window).height();
   const footerPadding = DEFAULT_FOOTER_PADDING + (viewportHeight - STANDARD_VIEWPORT_HEIGHT);
 
-  console.log(footerPadding);
+  const section03PaddingTop = Math.abs(parseInt($('.room_box').css('height')) - parseInt($('#myVideo2').css('height')));
+  const addPaddingTop = 180 - section03PaddingTop;
+  if (section03PaddingTop < 180) {
+    $('.section03').css('padding-top', addPaddingTop);
+  }
 
   //Swiper
   new Swiper('.swiper-container', {
