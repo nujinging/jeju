@@ -1,21 +1,3 @@
-const togglePlay = (e) => {
-  const _this = $(e.target);
-  const video = _this.hasClass('video') ? _this.get(0) : _this.find('video')[0];
-  const videoBox = $(video).parent();
-
-  if (video.paused || video.ended) {
-    videoBox.removeClass('video_box');
-    videoBox.addClass('active_video_box');
-    video.play();
-  } else {
-    videoBox.removeClass('active_video_box');
-    videoBox.addClass('video_box');
-    video.pause();
-
-    e.preventDefault();
-  }
-};
-
 $(document).ready(function () {
   const STANDARD_VIEWPORT_HEIGHT = 937;
   const DEFAULT_FOOTER_PADDING = 135;
@@ -44,7 +26,6 @@ $(document).ready(function () {
   });
 
   //Video
-  $('.video_box').on('click', togglePlay);
   $('.section03 .list .motion').on('click', function () {
     const url = $(this).attr('data-url');
     const modalBox = $(`<div class="modal_box"></div>`);

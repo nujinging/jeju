@@ -137,7 +137,7 @@ body::-webkit-scrollbar {
 
 /* 랜드마크 */
 .section01 {position:relative;height:100vh;color:#fff;overflow:hidden}
-.section01 iframe {position:absolute;right:0;bottom:0;min-width:100%;min-height:100%;pointer-events:none;}
+.section01 iframe {position:absolute;right:0;bottom:0;min-width:100%;min-height:100%;pointer-events:none}
 .section01 .inner {position:absolute;left:50%;bottom:130px;line-height:30px;transform:translateX(-50%)}
 .section01 .tit {color:#fff;font-size:45px;font-family: 'Pretendard-Bold', serif}
 
@@ -165,7 +165,7 @@ body::-webkit-scrollbar {
 .section03 .list li span {display:block;margin-top:20px}
 .section03 .list li:hover span {color:#FF7F02}
 .room_box {position:relative;height:460px;overflow:hidden}
-.room_box video {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}
+.room_box iframe {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);pointer-events:none}
 .room_box:after {transition:all 0.3s;content:''}
 .room_box:hover:after {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;background:#000}
 
@@ -174,10 +174,10 @@ body::-webkit-scrollbar {
 .section04 .intro_tit .tit {color:#1cb7c5}
 .section04 .intro_tit .txt:before {background:url('./../img/ico_leisure.png') no-repeat}
 .section04 .video_box,.section04 .active_video_box {position:relative;margin:40px 0;height:440px;overflow:hidden}
-.section04 .video_box:after {position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='29' fill='%231CB7C5' stroke='%231CB7C5' stroke-width='2'/%3E%3Cpath d='M23.875 37.8182V19.6364L39.3295 28.7273L23.875 37.8182Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;cursor:pointer;content:''}
-.section04 .video_box video, .section04 .active_video_box video {width:100%}
-.section04 .video_box:hover:before {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;background:#000;transition:all 0.3s;content:''}
-.section04 .video_box:hover:after {background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='29' fill='white' stroke='white' stroke-width='2'/%3E%3Cpath d='M23.875 37.8182V19.6364L39.3295 28.7273L23.875 37.8182Z' fill='%231CB7C5'/%3E%3C/svg%3E%0A") center no-repeat;transition:all 0.3s}
+/* .section04 .video_box:after {position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='29' fill='%231CB7C5' stroke='%231CB7C5' stroke-width='2'/%3E%3Cpath d='M23.875 37.8182V19.6364L39.3295 28.7273L23.875 37.8182Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;cursor:pointer;content:''} */
+.section04 .video_box .video, .section04 .active_video_box .video {width:100%}
+/* .section04 .video_box:hover:before {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;background:#000;transition:all 0.3s;content:''} */
+/* .section04 .video_box:hover:after {background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='29' fill='white' stroke='white' stroke-width='2'/%3E%3Cpath d='M23.875 37.8182V19.6364L39.3295 28.7273L23.875 37.8182Z' fill='%231CB7C5'/%3E%3C/svg%3E%0A") center no-repeat;transition:all 0.3s} */
 
 
 /* 미식 */
@@ -185,10 +185,10 @@ body::-webkit-scrollbar {
 .section05 .intro_tit .tit {color:#ff7d02}
 .section05 .intro_tit .txt:before {background:url('./../img/ico_rice.png') no-repeat}
 .section05 .video_box, .section05 .active_video_box {position:relative;margin:40px 0;height:440px;overflow:hidden}
-.section05 .video_box:after {position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg width='60' height='61' viewBox='0 0 60 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30.8188' r='29' fill='%23FF7F02' stroke='%23FF7F02' stroke-width='2'/%3E%3Cpath d='M23.875 38.637V20.4552L39.3295 29.5461L23.875 38.637Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;cursor:pointer;content:''}
+/* .section05 .video_box:after {position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg width='60' height='61' viewBox='0 0 60 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30.8188' r='29' fill='%23FF7F02' stroke='%23FF7F02' stroke-width='2'/%3E%3Cpath d='M23.875 38.637V20.4552L39.3295 29.5461L23.875 38.637Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;cursor:pointer;content:''} */
 .section05 .video_box video,.section05 .active_video_box video {width:100%}
-.section05 .video_box:hover:before {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;background:#000;transition:all 0.3s;content:''}
-.section05 .video_box:hover:after {background:url("data:image/svg+xml,%3Csvg width='60' height='61' viewBox='0 0 60 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30.8193' r='29' fill='white' stroke='white' stroke-width='2'/%3E%3Cpath d='M23.875 38.6375V20.4557L39.3295 29.5466L23.875 38.6375Z' fill='%23FF7F02'/%3E%3C/svg%3E%0A") center no-repeat;transition:all 0.3s}
+/* .section05 .video_box:hover:before {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;background:#000;transition:all 0.3s;content:''} */
+/* .section05 .video_box:hover:after {background:url("data:image/svg+xml,%3Csvg width='60' height='61' viewBox='0 0 60 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30.8193' r='29' fill='white' stroke='white' stroke-width='2'/%3E%3Cpath d='M23.875 38.6375V20.4557L39.3295 29.5466L23.875 38.6375Z' fill='%23FF7F02'/%3E%3C/svg%3E%0A") center no-repeat;transition:all 0.3s} */
 .section05:before {position:absolute;right:-45px;bottom:-75px;display:block;width:414px;height:474px;background:url('./../img/bg_section05.png') no-repeat;content:''}
 
 /* 변화무쌍 */
