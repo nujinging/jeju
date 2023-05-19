@@ -321,7 +321,7 @@ body::-webkit-scrollbar {
     .mobile_box .slide_mobile img {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}
 
     .mobile_box .swiper-pagination {left:50%;bottom:-32px;transform:translateX(-50%)}
-    .mobile_box .swiper-container-horizontal > .swiper-pagination-bullets {left:50%;bottom:-35px}
+    .mobile_box .swiper-container-horizontal > .swiper-pagination-bullets {position:absolute;left:0;bottom:-35px;text-align:center}
     .mobile_box .swiper-pagination-clickable .swiper-pagination-bullet {width:10px;height:10px}
     .mobile_box .swiper-pagination-clickable .swiper-pagination-bullet+.swiper-pagination-bullet {margin-left:8px}
     .mobile_box .swiper-pagination-bullet-active {background:#FF8D0E}
