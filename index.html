@@ -23,8 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css" />
 
-    <script src="//image.dizzo.com/interactive/images/shinhwaworld/index.js"></script>
-    <script src="//image.dizzo.com/interactive/images/shinhwaworld/js/index.js"></script>
+    <script src="./js/index.js"></script>
 </head>
 
 <body>
@@ -39,9 +38,9 @@
                 <iframe class="pc" src="https://player.vimeo.com/video/827486488?h=030e7bde74&title=0&byline=0&portrait=0&playsinline=1&autoplay=1&muted=1&autopause=0&loop=1"
                         width="100%" height="auto" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-                <iframe class="mobile" src="⁠https://player.vimeo.com/video/827576176/6d4d4d38bd&title=0&byline=0&portrait=0&playsinline=1&autoplay=1&muted=1&autopause=0&loop=1"
-                        width="100%" height="auto" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
+                <iframe class="mobile" title="vimeo-player" src="https://player.vimeo.com/video/827576176?h=6d4d4d38bd&title=0&byline=0&portrait=0&playsinline=1&autoplay=1&muted=1&autopause=0&loop=1"
+                         width="640" height="360" frameborder="0" allow="autoplay; fullscreen"  allowfullscreen></iframe>
+                
                 <div class="inner">
                     <h1 class="tit intro_text">숙박을 뛰어넘는 경험... <span>제주의 신(新) 랜드마크</span></h1>
                 </div>
@@ -131,9 +130,9 @@
 
             <!-- M -->
             <div class="room_box mobile">
-                <iframe src="https://player.vimeo.com/video/827488529?h=abded0f73e&title=0&byline=0&portrait=0&playsinline=1&autoplay=1&muted=1&autopause=0&loop=1" width="100%" height="200px" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe title="vimeo-player" id="roomBoxVideo" src="https://player.vimeo.com/video/827576808?h=65eae1daf0&title=0&byline=0&portrait=0&playsinline=1&autoplay=1&muted=1&autopause=0&loop=1"
+                 width="640" height="360" frameborder="0"   allow="autoplay; fullscreen"   allowfullscreen></iframe>
             </div>
-
 
             <!-- 360도 동영상 -->
             <section class="section03">
@@ -303,7 +302,6 @@
 </button>
 
 </body>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
     var swiper = new Swiper(".slide_mobile", {
         loop: true,

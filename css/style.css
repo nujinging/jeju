@@ -278,8 +278,9 @@ body::-webkit-scrollbar {
 
     .section02 .swiper-button-prev {left:20px}
     .section02 .swiper-button-next {right:20px}
+    .section02 {padding-bottom:60px;}
 
-    .section03 {padding:0 0 60px}
+    .section03 {padding:60px 0 60px}
     .section03 .intro_tit .tit:before {display:inline-block;width:100px;height:86px;background:url('//image.dizzo.com/interactive/images/shinhwaworld/ico_room.png') center / 100% no-repeat}
     .section03 .list_box {margin:40px 20px}
     .section03 .list {flex-wrap:wrap;gap:20px 10px;;width:100%}
@@ -312,8 +313,6 @@ body::-webkit-scrollbar {
     .footer ul li {width:50%;text-align:left;line-height:30px}
     .footer ul li:nth-child(4) {text-align:inherit;}
 
-
-
     .swiper-container {display:none}
     .mobile_box {display:block;margin-top:30px;padding-bottom:50px}
     .mobile_box .slide_mobile {position:relative;margin:0 20px}
@@ -326,7 +325,7 @@ body::-webkit-scrollbar {
     .mobile_box .swiper-pagination-clickable .swiper-pagination-bullet+.swiper-pagination-bullet {margin-left:8px}
     .mobile_box .swiper-pagination-bullet-active {background:#FF8D0E}
 
-    .modal_box .video {width:70%}
+    .modal_box .video {width:70%;}
     .modal_box button {right:0}
 
     .room_box.mobile {display:block;height:200px}

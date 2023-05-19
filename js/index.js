@@ -3,13 +3,7 @@ $(document).ready(function () {
   const DEFAULT_FOOTER_PADDING = 135;
   const viewportHeight = $(window).height();
   const footerPadding = DEFAULT_FOOTER_PADDING + (Math.abs(viewportHeight - STANDARD_VIEWPORT_HEIGHT) / 2);
-
-  const section03PaddingTop = Math.abs(parseInt($('.room_box').css('height')) - parseInt($('#myVideo2').css('height')));
-  const addPaddingTop = 180 - section03PaddingTop;
-  if (section03PaddingTop < 180) {
-    $('.section03').css('padding-top', addPaddingTop);
-  }
-
+  
   //Swiper
   new Swiper('.swiper-container', {
     loop: true,
@@ -24,24 +18,6 @@ $(document).ready(function () {
       prevEl: '.swiper-button-prev',
     },
   });
-
-  //Video
-  $('.section03 .list .motion').on('click', function () {
-    const url = $(this).attr('data-url');
-    const modalBox = $(`<div class="modal_box"></div>`);
-    const videoBox = $(`<div class="video"></div>`);
-    const closeButton = $(`<button type="button" class="modal_close"><span class="blind">닫기</span></button>`);
-    modalBox.appendTo('body');
-    videoBox.appendTo(modalBox);
-    closeButton.appendTo(videoBox);
-
-    const iframe = $(`<iframe width="${videoBox.width()}" height="${videoBox.height()}" src="${url}" frameborder="0" allowfullscreen></iframe>`);
-    iframe.appendTo(videoBox);
-    closeButton.on('click', function () {
-      $(this).parent().parent().detach();
-    });
-  });
-
 
   //Scroll Object Init
   var scrollObj = window.Scrollbar.init(document.querySelector('.scrollWrap'), { thumbMinSize: 10, speed: 2 });
@@ -72,6 +48,21 @@ $(document).ready(function () {
     
     // desktop
     "(min-width: 1200px)": function () {
+      $('.section03 .list .motion').on('click', function () {
+        const url = $(this).attr('data-url');
+        const modalBox = $(`<div class="modal_box"></div>`);
+        const videoBox = $(`<div class="video"></div>`);
+        const closeButton = $(`<button type="button" class="modal_close"><span class="blind">닫기</span></button>`);
+        modalBox.appendTo('body');
+        videoBox.appendTo(modalBox);
+        closeButton.appendTo(videoBox);
+  
+        const iframe = $(`<iframe width="${videoBox.width()}" height="${videoBox.height()}" src="${url}" frameborder="0" allowfullscreen></iframe>`);
+        iframe.appendTo(videoBox);
+        closeButton.on('click', function () {
+          $(this).parent().parent().detach();
+        });
+      });
       //section1 binding - intro
       gsap.to('#intro', {
         scrollTrigger: {
@@ -258,6 +249,25 @@ $(document).ready(function () {
 
     // mobile
     "(max-width: 1199px)": function () {
+      $('.section03 .list .motion').on('click', function () {
+        const url = $(this).attr('data-url');
+        const modalBox = $(`<div class="modal_box"></div>`);
+        const videoBox = $(`<div class="video"></div>`);
+        const closeButton = $(`<button type="button" class="modal_close"><span class="blind">닫기</span></button>`);
+        modalBox.appendTo('body');
+        videoBox.appendTo(modalBox);
+        closeButton.appendTo(videoBox);
+  
+        const height = 460 * videoBox.width() / 1080;
+        videoBox.css('height',height)
+  
+        const iframe = $(`<iframe width="${videoBox.width()}" height="${height}" src="${url}" frameborder="0" allowfullscreen></iframe>`);
+        iframe.appendTo(videoBox);
+        closeButton.on('click', function () {
+          $(this).parent().parent().detach();
+        });
+      });
+
       //section1 binding - intro
       gsap.to('#intro', {
         scrollTrigger: {
