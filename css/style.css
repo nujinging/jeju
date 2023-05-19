@@ -137,6 +137,7 @@ body::-webkit-scrollbar {
 
 /* 랜드마크 */
 .section01 {position:relative;height:100vh;color:#fff;overflow:hidden;pointer-events:none}
+.section01 {position: relative; height: 0; overflow: hidden; margin: 0; padding-bottom: 56.25%; padding-top: 30px;}
 .section01 iframe {position:absolute;right:0;bottom:0;min-width:100%;min-height:100%;pointer-events:none}
 .section01 iframe.mobile {display:none}
 .section01 .inner {position:absolute;left:50%;bottom:350px;line-height:30px;transform:translateX(-50%)}
@@ -268,6 +269,7 @@ body::-webkit-scrollbar {
     .intro_tit .txt {margin-top:20px}
     .intro_tit .txt:before {content:none}
 
+    .section01 {height:100vh}
     .section01 iframe.pc {display:none}
     .section01 iframe.mobile {display:block}
     .section01 .inner {margin-top:0}
